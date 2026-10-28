@@ -1,0 +1,21 @@
+# Render "Blueprint": lets Render set this service up automatically.
+# Secrets marked sync:false are typed into Render's dashboard, never committed.
+services:
+  - type: web
+    name: lockbox-auth
+    runtime: node
+    plan: free
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false
+      - key: BREVO_API_KEY
+        sync: false
+      - key: MAIL_FROM_EMAIL
+        sync: false
+      - key: MAIL_FROM_NAME
+        value: Lockbox

@@ -1,0 +1,23 @@
+{
+  "name": "lockbox-auth",
+  "version": "1.0.0",
+  "description": "A secure login / signup website with email verification, password reset and username recovery.",
+  "private": true,
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": "22.x"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "express": "^5.3.0",
+    "express-rate-limit": "^8.7.1",
+    "helmet": "^8.3.0",
+    "nodemailer": "^10.2.1",
+    "pg": "^8.23.1"
+  }
+}
